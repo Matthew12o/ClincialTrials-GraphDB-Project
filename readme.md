@@ -8,7 +8,7 @@ The project aims to overlay the ClinicalTrials.org database into a graphDB for a
 
 ClinicalTrials.org : Information on clinical trials
 
-Proprietary Dataset : Additional datasets are used to clean and tag the ClinicalTrials.org database to build relationships and speedup query
+Proprietary Dataset : Additional contextual datasets are used to clean and tag the ClinicalTrials.org database to build relationships and speedup query
 
 International Classification of Disease (ICD)* : Classify conditions
 
