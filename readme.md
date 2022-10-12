@@ -38,8 +38,6 @@ The project aims to overlay the ClinicalTrials.org database into a graphDB for a
 
 >Identify Conditions that are being treated with the Intervention of HPP. This could potentially allow you to identify additional indications that an intervention could be used
 
-
-
 ****
 ## 3. Data Schema
 
@@ -121,3 +119,22 @@ International Classification of Disease (ICD)* : Classify conditions
 ****
 
 ## 6. Development Plan
+1. Prototype
+
+ClinicalTrials.org SQL database to be mapped into a graphDB.
+
+2. V.1
+   
+Proprietary data and tagging to be added to improve performance and ease of search.
+
+3. V.2
+
+NLP implemented to clean the ClinicalTrails.org data further
+
+FDA's Device and Drug database to be overlayed on INTERVENTION for additional context
+
+ICD database is overlayed on top of the CONDITION nodes to better group the disease groups
+
+4. V.3
+
+Bloomberg BI database to be overlayed on top of the Sponsor/Intervention data to better contextualize drug development and analyst expectations on individual drugs
