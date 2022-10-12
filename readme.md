@@ -19,17 +19,35 @@ International Classification of Disease (ICD)* : Classify conditions
 
 ### Nodes:
 1. Study
-
-   
+    - ID
+    - completion_date
+    - created_as
+    - nct_id
+    - official_title
+    - overall_status
+    - phase
+    - source
+    - start_date
+    - studyId
+    - updated_at
+    
 2. Sponsor
+    - agency_class
+    - name
+    - sponsorId
    
 3. Facility*
-   
+
 4. PI*
    
 5. Intervention
+   - InterventionId
+   - name
+   - type
    
 6. Condition
+    - ConditionId
+    - name
    
 7. Disease Area* 
     
@@ -85,34 +103,40 @@ International Classification of Disease (ICD)* : Classify conditions
 
 ### SPONSOR MAP **ImmunoGen, Inc.**
 ![sponsor_map](samples/SPONSOR_MAP_IMMUNOGEN.png)
-Shows all Studies, Treatment and Conditions the company is exploring
+
+>Shows all Studies, Treatment and Conditions the company is exploring
 
 ### CONDITION MAP **Wilson Disease**
 ![condition_map](samples/CONDITION_MAP_WILSON_DISEASE.png)
-Identify Sponsors that are studying the disease as well as Interventions that are used to treat the disease.
+
+>Identify Sponsors that are studying the disease as well as Interventions that are used to treat the disease.
 
 ### STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)
 ![study_on_intervention](samples/Study%20Status%20on%20INTERVENTION%20Ultomiris.png)
-Shows clincial trials (Studies) that are being used to evaluate the Intervention.
+
+>Shows clincial trials (Studies) that are being used to evaluate the Intervention.
 
 ### Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**
 ![find_competition](samples/Find%20Competition%20on%20INTERVENTION%20ON%20CONDITION%20PNH.png)
-Shows all Interventions being used to treat a Condition. You can also remove Condition filter to show competition of all Conditions being treated by the Intervention
+
+>Shows all Interventions being used to treat a Condition. You can also remove Condition filter to show competition of all Conditions being treated by the Intervention
 
 ### SPONSORS on CONDITION **ALS** - (Industry Sponsor highlighted)
 ![sponsor_on_condition](samples/SPONSORS_on_CONDITION_ALS_INDUSTRY_ONLY.png)
-Shows all Sponsors that are exploring a Condition and any relationship between the Sponsors (Color indicates the SPONSOR is an INDUSTRY, ie pharmaceutical company)
+
+>Shows all Sponsors that are exploring a Condition and any relationship between the Sponsors (Color indicates the SPONSOR is an INDUSTRY, ie pharmaceutical company)
 
 ### CONDITION Shares INTERVENTION with CONDITION **pnh**
 ![share_intervention_with_other_conditions](samples/SHARED_TREATMETN_TO_CONDITION_PNH.png)
-Identify Conditions that are being treated with the Intervention of PNH. This could potentially allow you to identify additional indications that an intervention could be used
+
+>Identify Conditions that are being treated with the Intervention of PNH. This could potentially allow you to identify additional indications that an intervention could be used
 
 ****
 
 ## 5. System Setup 
 1. SQL Database 
 2. GraphDB
-3. DB Conversion **Algorithm**
+3. DB Conversion Algorithem
 4. Analytics Engine
-
+5. Visualization Platform
    
