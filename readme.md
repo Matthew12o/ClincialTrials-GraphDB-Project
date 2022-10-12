@@ -4,13 +4,41 @@
 
 The project aims to overlay the ClinicalTrials.org database into a graphDB for analyzing unique relationships between the PIs, Research Facility, Sponsors, Study, Intervention and Disease Area. Compared to regular relational database (SQL), graphDB allows for better representation of business relationships within the  dataset. The graphDB will make insights on competition, overlap of treatment or disease, trends and saturation of disease area much easier and faster to analyze. 
 ****
-## 2. Sources
 
-ClinicalTrials.org : Information on clinical trials
+## 2. Sample Queries
+*All samples have limited number of nodes to increase performance and may not have all relationships and nodes*
 
-Proprietary Dataset : Additional contextual datasets are used to clean and tag the ClinicalTrials.org database to build relationships and speedup query
+### SPONSOR MAP **ImmunoGen, Inc.**
+![sponsor_map](samples/SPONSOR_MAP_IMMUNOGEN.png)
 
-International Classification of Disease (ICD)* : Classify conditions
+>Shows all Studies, Treatment and Conditions the company is exploring
+
+### CONDITION MAP **Wilson Disease**
+![condition_map](samples/CONDITION_MAP_WILSON_DISEASE.png)
+
+>Identify Sponsors that are studying the disease as well as Interventions that are used to treat the disease.
+
+### STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)
+![study_on_intervention](samples/Study%20Status%20on%20INTERVENTION%20Ultomiris.png)
+
+>Shows clincial trials (Studies) that are evaluating the Intervention.
+
+### Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**
+![find_competition](samples/Find%20Competition%20on%20INTERVENTION%20ON%20CONDITION%20PNH.png)
+
+>Shows all Interventions being used to treat a Condition. You can also remove Condition filter to show competition of all Conditions being treated by the Intervention
+
+### SPONSORS on CONDITION **ALS** - (Industry Sponsor highlighted)
+![sponsor_on_condition](samples/SPONSORS_on_CONDITION_ALS_INDUSTRY_ONLY.png)
+
+>Shows all Sponsors that are exploring a Condition and any relationship between the Sponsors (Color indicates the SPONSOR is an INDUSTRY, ie pharmaceutical company)
+
+### CONDITION Shares INTERVENTION with CONDITION **hypophosphatasia**
+![share_intervention_with_other_conditions](samples/condition_share_hpp.png)
+
+>Identify Conditions that are being treated with the Intervention of HPP. This could potentially allow you to identify additional indications that an intervention could be used
+
+
 
 ****
 ## 3. Data Schema
@@ -96,40 +124,16 @@ International Classification of Disease (ICD)* : Classify conditions
 
 > Indirect Relationship indicates relationship that was inferred based on the relationship the node has with one or more nodes
 
+
 ****
 
-## 4. Sample Queries
-*All samples have limited number of nodes to increase performance and may not have all relationships and nodes*
+## 4. Sources
 
-### SPONSOR MAP **ImmunoGen, Inc.**
-![sponsor_map](samples/SPONSOR_MAP_IMMUNOGEN.png)
+ClinicalTrials.org : Information on clinical trials
 
->Shows all Studies, Treatment and Conditions the company is exploring
+Proprietary Dataset : Additional contextual datasets are used to clean and tag the ClinicalTrials.org database to build relationships and speedup query
 
-### CONDITION MAP **Wilson Disease**
-![condition_map](samples/CONDITION_MAP_WILSON_DISEASE.png)
-
->Identify Sponsors that are studying the disease as well as Interventions that are used to treat the disease.
-
-### STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)
-![study_on_intervention](samples/Study%20Status%20on%20INTERVENTION%20Ultomiris.png)
-
->Shows clincial trials (Studies) that are evaluating the Intervention.
-
-### Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**
-![find_competition](samples/Find%20Competition%20on%20INTERVENTION%20ON%20CONDITION%20PNH.png)
-
->Shows all Interventions being used to treat a Condition. You can also remove Condition filter to show competition of all Conditions being treated by the Intervention
-
-### SPONSORS on CONDITION **ALS** - (Industry Sponsor highlighted)
-![sponsor_on_condition](samples/SPONSORS_on_CONDITION_ALS_INDUSTRY_ONLY.png)
-
->Shows all Sponsors that are exploring a Condition and any relationship between the Sponsors (Color indicates the SPONSOR is an INDUSTRY, ie pharmaceutical company)
-
-### CONDITION Shares INTERVENTION with CONDITION **hypophosphatasia**
-![share_intervention_with_other_conditions](samples/condition_share_hpp.png)
-
->Identify Conditions that are being treated with the Intervention of HPP. This could potentially allow you to identify additional indications that an intervention could be used
+International Classification of Disease (ICD)* : Classify conditions
 
 ****
 
