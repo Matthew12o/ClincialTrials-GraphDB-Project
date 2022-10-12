@@ -114,7 +114,7 @@ International Classification of Disease (ICD)* : Classify conditions
 ### STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)
 ![study_on_intervention](samples/Study%20Status%20on%20INTERVENTION%20Ultomiris.png)
 
->Shows clincial trials (Studies) that are being used to evaluate the Intervention.
+>Shows clincial trials (Studies) that are evaluating the Intervention.
 
 ### Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**
 ![find_competition](samples/Find%20Competition%20on%20INTERVENTION%20ON%20CONDITION%20PNH.png)
