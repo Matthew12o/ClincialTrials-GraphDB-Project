@@ -126,10 +126,10 @@ International Classification of Disease (ICD)* : Classify conditions
 
 >Shows all Sponsors that are exploring a Condition and any relationship between the Sponsors (Color indicates the SPONSOR is an INDUSTRY, ie pharmaceutical company)
 
-### CONDITION Shares INTERVENTION with CONDITION **pnh**
-![share_intervention_with_other_conditions](samples/SHARED_TREATMETN_TO_CONDITION_PNH.png)
+### CONDITION Shares INTERVENTION with CONDITION **hypophosphatasia**
+![share_intervention_with_other_conditions](samples/condition_share_hpp.png)
 
->Identify Conditions that are being treated with the Intervention of PNH. This could potentially allow you to identify additional indications that an intervention could be used
+>Identify Conditions that are being treated with the Intervention of HPP. This could potentially allow you to identify additional indications that an intervention could be used
 
 ****
 
