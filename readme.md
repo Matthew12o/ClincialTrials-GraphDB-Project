@@ -119,11 +119,11 @@ International Classification of Disease (ICD)* : Classify conditions
 ****
 
 ## 6. Development Plan
-1. Prototype
+1. Prototype - (COMPLETED)
 
 ClinicalTrials.org SQL database to be mapped into a graphDB.
 
-2. V.1
+2. V.1 - (IN PROGRESS)
    
 Proprietary data and tagging to be added to improve performance and ease of search.
 
