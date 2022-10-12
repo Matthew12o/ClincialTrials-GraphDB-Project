@@ -134,9 +134,9 @@ International Classification of Disease (ICD)* : Classify conditions
 ****
 
 ## 5. System Setup 
-1. SQL Database 
-2. GraphDB
-3. DB Conversion Algorithem
-4. Analytics Engine
-5. Visualization Platform
+1. SQL Database : PostGRE SQL
+2. GraphDB : Neo4j
+3. DB Conversion Algorithem : Proprietary
+4. Analytics Engine : Proprietary
+5. Visualization Platform : Neo4j Bloom
    
