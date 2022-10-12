@@ -46,79 +46,53 @@ The project aims to overlay the ClinicalTrials.org database into a graphDB for a
 ![DBSchema](/samples/Schema.png)
 
 ### Nodes:
-1. Study
-    - ID
-    - completion_date
-    - created_as
-    - nct_id
-    - official_title
-    - overall_status
-    - phase
-    - source
-    - start_date
-    - studyId
-    - updated_at
-    
-2. Sponsor
-    - agency_class
-    - name
-    - sponsorId
-   
-3. Facility*
-
-4. PI*
-   
-5. Intervention
-   - InterventionId
-   - name
-   - type
-   
-6. Condition
-    - ConditionId
-    - name
-   
-7. Disease Area* 
-    
-8. Region*
+|# | Label | Properties| Type |
+|--|-------|------------|-------|
+|1| Study | ||
+|||ID |Integer|
+|||completion_date|Date|
+|||created_at|DateTime|
+|||nct_id|String|
+|||official_title|Text|
+|||overall_status|String|
+|||phase | String|
+|||source | String|
+|||start_date| Date|
+|||studyId | Integer|
+|||updated_at | DateTime|
+|2|Sponsor||||
+|||SponsorId| Integer|
+|||name|String|
+|||sponsorId|Integer|
+|3|Facility*|||
+|4|PI*|||
+|5|Intervention|||
+|||InterventionId|Integer|
+|||name|String|
+|||type|String|
+|6|Condition|||
+|||ConditionId|Integer|
+|||name|String|
+|7|Disease Area*||
+|8|Region*|||
 
    
 ### Relationships:
-1. STUDY - [:STUDY_ON] -> CONDITION : Direct Relationship
-
-
-
-2. STUDY - [:EVALUATES] -> INTERVENTION : Direct Relationship
-
-
-
-3. SPONSOR - [:LEADS] -> STUDY : Direct Relationship
-
-
-
-4. SPONSOR - [:COLLABORATES_ON] -> STUDY : Direct Relationship
-
-
-
-5. SPONSOR - [:COLLABORATES_WITH] -> SPONSOR : Indirect Relationship
-
-
-
-6. SPONSOR - [:STUDIES] -> CONDITION : Direct Relationship
-
-
-
-7. SPONSOR - [:INVESTIGATES] -> INTERVENTION : Direct Relationship
-
-
-
-8. INTERVENTION - [:TREATS] -> CONDITION : Direct Relationship
-
-
-
-9.  INTERVENTION - [:ALIAS] -> INTERVENTION : Direct/Indirect Relationship
-
-
-
+|#|Relationship Name|Originating Node|Target Node|Preferred Search Direction|Relationship Type|Properties|Data Type|
+|-|--------|--------|------|------|-----|----|---|
+|1|STUDY_ON|Study|Condition|Unidirectional|Direct||
+|2|EVALUATES|Study|Intervention|Unidirectional|Direct|||
+|3|LEADS|Sponsor|Study|Unidirectional|Direct|||
+|4|COLLABORATES_ON|Sponsor|Study|Unidirectional|Direct||
+|5|COLLABORATES_WITH|Sponsor|Sponsor|Bidirectional|Indirect||
+|||||||occurance|Integer|
+|6|STUDIES|Sponsor|Condition|Unidirectional|Direct||
+|||||||occurance|Integer|
+|7|INVESTIGATES|Sponsor|Intervention|Unidirectional|Direct||
+|||||||occurance|Integer|
+|8|TREATS|Intervention|Condition|Unidirectional|Direct||
+|||||||occurance|Integer|
+|9|ALIAS|Intervention|Intervention|Bidirectional|Direct/Indirect|||
 
 > Direct Relationship indicates relationship built into the SQL database's schema
 
