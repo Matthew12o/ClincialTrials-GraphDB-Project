@@ -24,7 +24,7 @@ The project aims to overlay the ClinicalTrials.org database into a graphDB for a
 >Shows clincial trials (Studies) that are evaluating the Intervention.
 
 ### Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**
-![find_competition](samples/Find%20Competition%20on%20INTERVENTION%20ON%20CONDITION%20PNH.png)
+![find_competition](samples/COMPETITION%20for%20INTERVENTION%20eculizumab%20ON%20CONDITION%20PNH.png)
 
 >Shows all Interventions being used to treat a Condition. You can also remove Condition filter to show competition of all Conditions being treated by the Intervention
 
@@ -117,4 +117,7 @@ International Classification of Disease (ICD)* : Classify conditions
 3. DB Conversion Algorithem : Proprietary
 4. Analytics Engine : Proprietary
 5. Visualization Platform : Neo4j Bloom
-   
+
+****
+
+## 6. Development Plan
