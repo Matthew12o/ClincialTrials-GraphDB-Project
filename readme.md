@@ -33,19 +33,19 @@ The project aims to overlay the ClinicalTrials.org database into a graphDB for a
 
 ### **2.1 Doctors**
 
-Doctors can use the database to search for [potential interventions for their patients](#32-condition-map-wilson-disease), [explore off-label uses of existing interventions](#36-condition-shares-intervention-with-condition-hypophosphatasia), and [search for active clinical trials](#33-study-on-intervention-ultomiris---active-clinical-trials-highlighted). 
+Doctors can use the database to search for [potential interventions for their patients](#32-condition-map-wilson-disease), [explore off-label uses of existing interventions](#36-condition-shares-intervention-with-condition-hypophosphatasia), and [active clinical trials](#33-study-on-intervention-ultomiris---active-clinical-trials-highlighted). 
 
 ### **2.2 Researchers/P.I.**
 
-Researchers and Principal Investigators can use the database to search for [collaborative relationships between sponsors](#32-condition-map-wilson-disease) and look for potential future collaborations with [sponsors that studies a particular condition](#35-sponsors-on-condition-als---industry-sponsor-highlighted)
+Researchers and Principal Investigators can use the database to search for [collaborative relationships between sponsors](#32-condition-map-wilson-disease) and look for potential future collaborations with [sponsors that studies a particular condition.](#35-sponsors-on-condition-als---industry-sponsor-highlighted)
 
 ### **2.3 Pharmaceuticals Companies**
 
-Pharmaceuticals can use the database to look at the [saturation of the treatment options](#32-condition-map-wilson-disease), [keep track of competitive landscape](#34-find-competition-on-intervention-eculizumab-on-condition-pnh), [identify if new clinical trial for off-label use of the pharmaceutical's or competitors' intervention has been initiated](#36-condition-shares-intervention-with-condition-hypophosphatasia). Furthermore, Pharmaceutical companies can look for [potential collaborative relationships or avoid sponsors based on other sponsor's past relationship and acitivites](#35-sponsors-on-condition-als---industry-sponsor-highlighted).
+Pharmaceuticals can use the database to look at the [saturation of the treatment options](#32-condition-map-wilson-disease), [keep track of competitive landscape](#34-find-competition-on-intervention-eculizumab-on-condition-pnh), identify if [new clinical trial for off-label use of the pharmaceutical's or competitors' intervention has been initiated](#36-condition-shares-intervention-with-condition-hypophosphatasia). Furthermore, Pharmaceutical companies can look for [potential collaborative relationships or avoid sponsors based on other sponsor's past relationship and acitivites](#35-sponsors-on-condition-als---industry-sponsor-highlighted).
 
 ### **2.4 Equity Analyst**
 
-Equity Analyst can explore the [activites of a particular sponsor](#31-sponsor-map-immunogen-inc), [competitive landscape for the condition](#34-find-competition-on-intervention-eculizumab-on-condition-pnh) and look at saturation of the condition as it developed through the years.
+Equity Analyst can explore the [activites of a particular sponsor](#31-sponsor-map-immunogen-inc), [competitive landscape for the condition](#34-find-competition-on-intervention-eculizumab-on-condition-pnh) and look at the [saturation of treatment options for a condition](#34-find-competition-on-intervention-eculizumab-on-condition-pnh) as they develope through the years.
 
 ## 3. Sample Queries
 *All samples have limited number of nodes to increase performance and may not have all relationships and nodes*
