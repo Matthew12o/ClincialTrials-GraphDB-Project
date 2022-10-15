@@ -1,14 +1,56 @@
 # Clinical Trial GraphDB Overlay Project
 ****
+## Table of Contents
+- [Clinical Trial GraphDB Overlay Project](#clinical-trial-graphdb-overlay-project)
+  - [Table of Contents](#table-of-contents)
+  - [1. Purpose](#1-purpose)
+  - [2. Target Audiences](#2-target-audiences)
+    - [2.1 Doctors](#21-doctors)
+    - [2.2 Researchers/P.I.](#22-researcherspi)
+    - [2.3 Pharmaceuticals Companies](#23-pharmaceuticals-companies)
+    - [2.4 Equity Analyst](#24-equity-analyst)
+  - [3. Sample Queries](#3-sample-queries)
+    - [3.1 SPONSOR MAP **ImmunoGen, Inc.**](#31-sponsor-map-immunogen-inc)
+    - [3.2 CONDITION MAP **Wilson Disease**](#32-condition-map-wilson-disease)
+    - [3.3 STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)](#33-study-on-intervention-ultomiris---active-clinical-trials-highlighted)
+    - [3.4 Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**](#34-find-competition-on-intervention-eculizumab-on-condition-pnh)
+    - [3.5 SPONSORS on CONDITION **ALS** - (Industry Sponsor highlighted)](#35-sponsors-on-condition-als---industry-sponsor-highlighted)
+    - [3.6 CONDITION Shares INTERVENTION with CONDITION **hypophosphatasia**](#36-condition-shares-intervention-with-condition-hypophosphatasia)
+  - [4. Data Schema](#4-data-schema)
+    - [4.1 Nodes:](#41-nodes)
+    - [4.2 Relationships:](#42-relationships)
+  - [5. Sources](#5-sources)
+  - [6. System Setup](#6-system-setup)
+  - [7. Development Plan](#7-development-plan)
+****
+
 ## 1. Purpose
 
 The project aims to overlay the ClinicalTrials.org database into a graphDB for analyzing unique relationships between the PIs, Research Facility, Sponsors, Study, Intervention and Disease Area. Compared to regular relational database (SQL), graphDB allows for better representation of business relationships within the  dataset. The graphDB will make insights on competition, overlap of treatment or disease, trends and saturation of disease area much easier and faster to analyze. 
 ****
 
-## 2. Sample Queries
+## 2. Target Audiences
+
+### 2.1 Doctors
+
+Doctors can use the database to search for [potential interventions for their patients](#32-condition-map-wilson-disease), [explore off-label uses of existing interventions](#36-condition-shares-intervention-with-condition-hypophosphatasia), and [search for active clinical trials](#33-study-on-intervention-ultomiris---active-clinical-trials-highlighted). 
+
+### 2.2 Researchers/P.I.
+
+Researchers and Principal Investigators can use the database to search for [collaborative relationships between sponsors](#32-condition-map-wilson-disease) and look for potential future collaborations with [sponsors that studies a particular condition](#35-sponsors-on-condition-als---industry-sponsor-highlighted)
+
+### 2.3 Pharmaceuticals Companies
+
+Pharmaceuticals can use the database to look at the saturation of the treatment options, keep track of competitive landscape, identify if new clinical trial for off-label use of the pharmaceutical's or competitors' intervention has been initiated. Furthermore, Pharmaceutical companies can look for potential collaborative relationships or avoid sponsors based on other sponsor's past relationship and acitivites.
+
+### 2.4 Equity Analyst
+
+Equity Analyst can explore the activites of a particular sponsor, competitive landscape for the condition and look at saturation of the condition as it developed through the years.
+
+## 3. Sample Queries
 *All samples have limited number of nodes to increase performance and may not have all relationships and nodes*
 
-### SPONSOR MAP **ImmunoGen, Inc.**
+### 3.1 SPONSOR MAP **ImmunoGen, Inc.**
 
 >Shows all Studies, Treatment and Conditions the company is exploring. 
 
@@ -21,7 +63,7 @@ WITH pattern, intervention, s
 MATCH alias_pattern=(intervention)-[:ALIAS]-(:INTERVENTION)<-[]-(s)
 RETURN pattern, alias_pattern
 ```
-### CONDITION MAP **Wilson Disease**
+### 3.2 CONDITION MAP **Wilson Disease**
 
 >Identify Sponsors that are studying the disease as well as Interventions that are used to treat the disease.
 
@@ -34,7 +76,7 @@ RETURN p
 ```
 
 
-### STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)
+### 3.3 STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)
 
 >Shows clincial trials (Studies) that are evaluating the Intervention.
 
@@ -46,7 +88,7 @@ WHERE intervention.name = $name and study.phase IS NOT NULL
 RETURN pattern
 ```
 
-### Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**
+### 3.4 Find Competition on INTERVENTION **Eculizumab** ON CONDITION **pnh**
 
 
 >Shows all Interventions being used to treat a Condition. You can also remove Condition filter to show competition of all Conditions being treated by the Intervention
@@ -63,7 +105,7 @@ RETURN pattern, pattern_2
 ```
 
 
-### SPONSORS on CONDITION **ALS** - (Industry Sponsor highlighted)
+### 3.5 SPONSORS on CONDITION **ALS** - (Industry Sponsor highlighted)
 
 >Shows all Sponsors that are exploring a Condition and any relationship between the Sponsors (Color indicates the SPONSOR is an INDUSTRY, ie pharmaceutical company)
 
@@ -77,7 +119,7 @@ MATCH p2 = (sponsor)-[:COLLABORATES_WITH]-(co_sponsor:SPONSOR)-[:STUDIES]->(cond
 RETURN p2
 ```
 
-### CONDITION Shares INTERVENTION with CONDITION **hypophosphatasia**
+### 3.6 CONDITION Shares INTERVENTION with CONDITION **hypophosphatasia**
 
 >Identify Conditions that are being treated with the Intervention of HPP. This could potentially allow you to identify additional indications that an intervention could be used
 
@@ -91,11 +133,12 @@ MATCH p2=(sponsor)-[:INVESTIGATES]->(intervention)-[:TREATS]->(cond:CONDITION)
 RETURN p, p2
 ```
 ****
-## 3. Data Schema
+
+## 4. Data Schema
 
 ![DBSchema](/samples/Schema.png)
 
-### Nodes:
+### 4.1 Nodes:
 |# | Label | Properties| Type |
 |--|-------|------------|-------|
 |1| Study | ||
@@ -127,7 +170,7 @@ RETURN p, p2
 |8|Region*|||
 
    
-### Relationships:
+### 4.2 Relationships:
 |#|Relationship Name|Originating Node|Target Node|Preferred Search Direction|Relationship Type|Properties|Data Type|
 |-|--------|--------|------|------|-----|----|---|
 |1|STUDY_ON|Study|Condition|Unidirectional|Direct||
@@ -151,7 +194,7 @@ RETURN p, p2
 
 ****
 
-## 4. Sources
+## 5. Sources
 
 ClinicalTrials.org : Information on clinical trials
 
@@ -161,7 +204,7 @@ International Classification of Disease (ICD)* : Classify conditions
 
 ****
 
-## 5. System Setup 
+## 6. System Setup 
 1. SQL Database : PostGRE SQL
 2. GraphDB : Neo4j
 3. DB Conversion Algorithem : Proprietary
@@ -170,13 +213,13 @@ International Classification of Disease (ICD)* : Classify conditions
 
 ****
 
-## 6. Development Plan
+## 7. Development Plan
 1. Prototype - (COMPLETED)
 
 ClinicalTrials.org SQL database to be mapped into a graphDB.
 
 2. V.1 - (IN PROGRESS)
-   
+
 Proprietary data and tagging to be added to improve performance and ease of search.
 
 3. V.2
