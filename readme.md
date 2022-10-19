@@ -69,12 +69,174 @@ RETURN pattern, alias_pattern
 
 ![condition_map](samples/CONDITION_MAP_WILSON_DISEASE.png)
 
+
+Query
 ```Cypher
 MATCH p=(sponsor:SPONSOR)-[:STUDIES]->(condition:CONDITION)<-[:TREATS]-(intervention:INTERVENTION {type: 'Drug'})-[:ALIAS]-(intervention_alias:INTERVENTION)<-[:INVESTIGATES]-(sponsor)
 WHERE toLower(condition.name) in [$name] and intervention.isPlacebo is NULL and intervention_alias.isPlacebo is NULL
 RETURN p 
 ```
 
+Output
+```Json
+{
+    "start": {
+        "identity": 24946,
+        "labels": [
+            "SPONSOR"
+            ],
+        "properties": {
+            "agency_class": "OTHER",
+            "sponsorId": "2560",
+            "name": "University of Michigan"
+            }
+    },
+    "end": {
+        "identity": 28572,
+        "labels": [
+            "INTERVENTION"
+            ],
+        "properties": {
+            "InterventionId": "2364",
+            "name": "Prednisone",
+            "type": "Drug"
+            }
+    },
+    "segments": [
+        {
+        "start": {
+            "identity": 24946,
+            "labels": [
+                    "SPONSOR"
+                    ],
+            "properties": {
+            "agency_class": "OTHER",
+            "sponsorId": "2560",
+            "name": "University of Michigan"
+                    }
+            },
+        "relationship": {
+            "identity": 3078410,
+            "start": 24946,
+            "end": 54833,
+            "type": "STUDIES",
+            "properties": {
+
+                    }
+                },
+        "end": {
+            "identity": 54833,
+            "labels": [
+                    "CONDITION"
+                    ],
+            "properties": {
+            "name": "wilson disease",
+            "ConditionId": "98186"  
+                    }
+            }   
+        },
+        {
+        "start": {
+            "identity": 54833,
+            "labels": [
+                    "CONDITION"
+                    ],
+            "properties": {
+            "name": "wilson disease",
+            "ConditionId": "98186"
+                    }
+        },
+        "relationship": {
+            "identity": 6418669,
+            "start": 47737,
+            "end": 54833,
+            "type": "TREATS",
+            "properties": {
+            "occurance": 1
+                    }
+        },
+        "end": {
+            "identity": 47737,
+            "labels": [
+                    "INTERVENTION"
+                    ],
+            "properties": {
+            "InterventionId": "5149",
+            "name": "prednisolone",
+            "type": "Drug"
+                    }
+        }
+        },
+        {
+        "start": {
+            "identity": 47737,
+            "labels": [
+                    "INTERVENTION"
+                    ],
+            "properties": {
+            "InterventionId": "5149",
+            "name": "prednisolone",
+            "type": "Drug"
+                    }
+        },
+        "relationship": {
+            "identity": 24225,
+            "start": 28572,
+            "end": 47737,
+            "type": "ALIAS",
+            "properties": {
+
+                    }
+        },
+        "end": {
+            "identity": 28572,
+            "labels": [
+                    "INTERVENTION"
+                    ],
+            "properties": {
+            "InterventionId": "2364",
+            "name": "Prednisone",
+            "type": "Drug"
+                    }
+        }
+        },
+        {
+        "start": {
+            "identity": 28572,
+            "labels": [
+                    "INTERVENTION"
+                    ],
+            "properties": {
+            "InterventionId": "2364",
+            "name": "Prednisone",
+            "type": "Drug"
+                    }
+        },
+        "relationship": {
+            "identity": 1422928,
+            "start": 24946,
+            "end": 28572,
+            "type": "INVESTIGATES",
+            "properties": {
+            "occurance": 1
+                    }
+        },
+        "end": {
+            "identity": 24946,
+            "labels": [
+                    "SPONSOR"
+                    ],
+            "properties": {
+            "agency_class": "OTHER",
+            "sponsorId": "2560",
+            "name": "University of Michigan"
+                    }
+        }
+        }
+    ],
+    "length": 4.0
+}
+```
 
 ### 3.3 STUDY on INTERVENTION **Ultomiris** - (Active Clinical Trials highlighted)
 
