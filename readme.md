@@ -59,10 +59,10 @@ Equity Analyst can explore the [activites of a particular sponsor](#31-sponsor-m
 ![sponsor_map](samples/SPONSOR_MAP_IMMUNOGEN.png)
 
 ```Cypher
-MATCH pattern=(s:SPONSOR)-[:STUDIES]->(:CONDITION)<-[:TREATS]-(intervention:INTERVENTION)-[:EVALUATES]-(:STUDY)<-[]-(s)
-WHERE s.name=$name
-WITH pattern, intervention, s
-MATCH alias_pattern=(intervention)-[:ALIAS]-(:INTERVENTION)<-[]-(s)
+MATCH pattern=(sponsor:SPONSOR)-[:STUDIES]->(:CONDITION)<-[:TREATS]-(intervention:INTERVENTION)-[:EVALUATES]-(:STUDY)<-[]-(sponsor)
+WHERE sponsor.name=$name
+WITH pattern, intervention, sponsor
+MATCH alias_pattern=(intervention)-[:ALIAS]-(:INTERVENTION)<-[]-(sponsor)
 RETURN pattern, alias_pattern
 ```
 ### 3.2 CONDITION MAP **Wilson Disease**
