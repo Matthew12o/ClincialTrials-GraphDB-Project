@@ -50,6 +50,8 @@ Equity Analyst can explore the [activites of a particular sponsor](#31-sponsor-m
 ## 3. Sample Queries
 *All samples have limited number of nodes to increase performance and may not have all relationships and nodes*
 
+***See Example 3.2 for full output***
+
 ### 3.1 SPONSOR MAP **ImmunoGen, Inc.**
 
 >Shows all Studies, Treatment and Conditions the company is exploring. 
